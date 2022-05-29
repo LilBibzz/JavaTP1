@@ -47,6 +47,7 @@ public class GameRpgTp {
             choixHero.add(new LaCroixRouge());
             choixHero.add(new LaCroixRouge());
             choixHero.add(new LaCroixRouge());
+            choixHero.add(new LaCroixRouge());
         }
 
     }
