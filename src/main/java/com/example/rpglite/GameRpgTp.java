@@ -92,7 +92,7 @@ public class GameRpgTp {
                 int queFaire = scannNum.verific();
                 if(queFaire == 1){
                     choixHero.get(0).fighterZ(badInF);
-                    System.out.println("Ton " + choixHero.get(0).getClass().getName() + "a infligé " + choixHero.get(0).damageDeDegat);
+                    System.out.println("Ton " + choixHero.get(0).getClass().getName() + "a infligé " + choixHero.get(0).damageDeDegat +" L'ennemi a contre Attaqué! \n Que fais ton Hero ensuite choisi bien comme les Pokemon");
                     if(badInF.pointDePv <= 0){
                         adversaire.remove(badInF);
                     }
@@ -103,22 +103,27 @@ public class GameRpgTp {
                     }
                 }
                 else if(queFaire == 2){
+
                     if(goodInF.shieldArmure <0 ){
-                        System.out.println("Mange Mange bien !");
+                        System.out.println(" T'as plus de shield MDRRRR Mange Mange bien ! L'ennemi a contre Attaqué! \n Que fais ton Hero ensuite choisi bien comme les Pokemon");
                     }
                     else{
                         goodInF.defensive();
+                        System.out.println("Ton " + choixHero.get(0).getClass().getName() + "Se défend bien  L'ennemi a contre Attaqué! \n Que fais ton Hero ensuite choisi bien comme les Pokemon");
                     }
 
                 }
                 else if(queFaire == 3){
                     if (nbPotions.size()>0){
                         goodInF.nbPotions.get(0).reVivall(goodInF);
+                        System.out.println("Ton " + choixHero.get(0).getClass().getName() + "a utilisé 1 popote ca met bien. L'ennemi a contre Attaqué! \n Que fais ton Hero ensuite choisi bien comme les Pokemon");
+                    }else{
+                        System.out.println("Plus de POPOTE désolé va peche ailleurs L'ennemi a contre Attaqué! \n Que fais ton Hero ensuite choisi bien comme les Pokemon");
                     }
 
                 }
                 else if(queFaire == 4){
-                    System.out.println("Pas le temps de manger Fuck les Pasta Box ");
+                    System.out.println("Pas le temps de manger Fuck les Pasta Box ! L'ennemi a contre Attaqué! \n Que fais ton Hero ensuite choisi bien comme les Pokemon ");
 
                 }
                 adversaire.get(0).fighterZ(goodInF);
@@ -134,17 +139,14 @@ public class GameRpgTp {
         for(int numVague = 1; numVague <6; numVague++){
             combat(numVague);
             if(choixHero.size()<=0){
+                System.out.println("T'as perdu gros you guez budy");
                 break;
+            }else {
+                System.out.println("T'as Passer la Première Vaguue ! \n On augmente le level ZEEEEEEEBARTIIIIII!!!! \n Voila vos recompenses 1 chacun les enfants ");
             }
             for(int indexHero = 0; indexHero<choixHero.size() ; indexHero++){
                 recompense(choixHero.get(indexHero));
             }
-        }
-        if(choixHero.size()<=0){
-            System.out.println("T'as perdu gros you guez budy");
-        }
-        else {
-            System.out.println("On augmente le level ZEEEEEEEBARTIIIIII");
         }
     }
     public void recompense(Hero theGift){
